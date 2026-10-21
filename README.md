@@ -58,6 +58,10 @@ graphics.AddBody(Post02_ConstructionTree.BuildSheet(app));
 graphics.Update();
 ```
 
+## About
+
+Made by [Bas Automation Services](https://basautomationservices.com): Autodesk Inventor add-ins and CAD automation from Rotterdam.
+
 ## License
 
 MIT — see [LICENSE](LICENSE).
