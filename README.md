@@ -13,6 +13,7 @@ The repository grows with the series: each post's code is added when the post go
 | [Cap faces for a transient beam](https://basautomationservices.com/blog/transient-beam-cap-faces/) | `Profiles.cs`, `Post04_CapFaces.cs` |
 | [Side faces for a transient beam](https://basautomationservices.com/blog/transient-beam-side-faces/) | `Post05_StraightBeam.cs` |
 | [Clean angled ends on a transient beam](https://basautomationservices.com/blog/transient-beam-angled-ends/) | `Post06_AngledEnds.cs` |
+| [Rendering a transient beam in the viewport](https://basautomationservices.com/blog/transient-beam-rendering/) | `Post07_Rendering.cs` |
 
 Two projects:
 

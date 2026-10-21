@@ -80,7 +80,7 @@ public static class Program
         switch (post)
         {
             case "1":
-                throw new ArgumentException("Post 1 is the introduction and has no code to run; try 2 to 6.");
+                throw new ArgumentException("Post 1 is the introduction and has no code to run; try 2 to 7.");
             case "2":
                 graphics.AddBody(Post02_ConstructionTree.BuildSheet(app));
                 break;
@@ -121,8 +121,18 @@ public static class Program
                     mitre, new Plane3D(new Point3D(45, 50, 0), Vector3D.XAxis)));
                 break;
             }
+            case "7":
+            {
+                var startCut = new Plane3D(new Point3D(0, 0, 0), new Vector3D(0.6, 1, 0));
+                var endCut   = new Plane3D(new Point3D(0, 60, 0), new Vector3D(-0.6, 1, 0));
+                var beam = Post06_AngledEnds.Build(app, rhs, [rhsInner], new Point3D(0, 0, 0), new Point3D(0, 60, 0), startCut, endCut);
+                Post07_Rendering.AddPreview(graphics.ClientGraphics, app.TransientObjects, beam);
+                Post07_Rendering.AddPreviewWithCurveEdges(graphics.ClientGraphics, app.TransientObjects,
+                    Post05_StraightBeam.Build(app, Profiles.Circle(3), [Profiles.Circle(2.5)], new Point3D(-14, 0, 0), y, 60));
+                break;
+            }
             default:
-                throw new ArgumentException($"Unknown post '{post}'. Use 2-6, or clear.");
+                throw new ArgumentException($"Unknown post '{post}'. Use 2-7, or clear.");
         }
     }
 
