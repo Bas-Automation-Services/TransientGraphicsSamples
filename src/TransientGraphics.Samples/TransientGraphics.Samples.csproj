@@ -8,7 +8,7 @@
     <RootNamespace>TransientGraphics.Samples</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="BasAutomation.Geometry" Version="1.0.0" />
+    <PackageReference Include="BasAutomation.Geometry" Version="2.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Autodesk.Inventor.Interop">
