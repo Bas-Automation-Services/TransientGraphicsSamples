@@ -134,11 +134,13 @@ public static class Program
             case "8":
             {
                 var preview = new Post08_PreviewGraphics(app, graphics.ClientGraphics);
+                var red = app.TransientObjects.CreateColor(200, 30, 30, 0.35);
                 preview.BeginUpdate();
                 for (int i = 0; i < 4; i++)
-                    preview.AddOrReplace("member-" + i, Post05_StraightBeam.Build(app, rhs, [rhsInner], new Point3D(i * 14, 0, 0), y, 60));
+                    preview.AddOrReplace("member-" + i, Post05_StraightBeam.Build(app, rhs, [rhsInner], new Point3D(i * 14, 0, 0), y, 60),
+                        i == 2 ? red : null);
 
-                // A placement-only change: rotate and lift the third member without rebuilding it.
+                // A placement-only change: rotate and lift the third (red) member without rebuilding it.
                 var m = tg.CreateMatrix();
                 m.SetToRotation(-0.25, tg.CreateVector(0, 0, 1), tg.CreatePoint(28, 0, 0));
                 var t = tg.CreateMatrix();
