@@ -80,7 +80,7 @@ public static class Program
         switch (post)
         {
             case "1":
-                throw new ArgumentException("Post 1 is the introduction and has no code to run; try 2 to 7.");
+                throw new ArgumentException("Post 1 is the introduction and has no code to run; try 2 to 8.");
             case "2":
                 graphics.AddBody(Post02_ConstructionTree.BuildSheet(app));
                 break;
@@ -131,8 +131,25 @@ public static class Program
                     Post05_StraightBeam.Build(app, Profiles.Circle(3), [Profiles.Circle(2.5)], new Point3D(-14, 0, 0), y, 60));
                 break;
             }
+            case "8":
+            {
+                var preview = new Post08_PreviewGraphics(app, graphics.ClientGraphics);
+                preview.BeginUpdate();
+                for (int i = 0; i < 4; i++)
+                    preview.AddOrReplace("member-" + i, Post05_StraightBeam.Build(app, rhs, [rhsInner], new Point3D(i * 14, 0, 0), y, 60));
+
+                // A placement-only change: rotate and lift the third member without rebuilding it.
+                var m = tg.CreateMatrix();
+                m.SetToRotation(-0.25, tg.CreateVector(0, 0, 1), tg.CreatePoint(28, 0, 0));
+                var t = tg.CreateMatrix();
+                t.SetTranslation(tg.CreateVector(0, 0, 8));
+                m.TransformBy(t);
+                preview.Transform("member-2", m);
+                preview.EndUpdate();
+                break;
+            }
             default:
-                throw new ArgumentException($"Unknown post '{post}'. Use 2-7, or clear.");
+                throw new ArgumentException($"Unknown post '{post}'. Use 2-8, or clear.");
         }
     }
 

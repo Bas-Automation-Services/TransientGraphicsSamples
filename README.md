@@ -14,6 +14,7 @@ The repository grows with the series: each post's code is added when the post go
 | [Side faces for a transient beam](https://basautomationservices.com/blog/transient-beam-side-faces/) | `Post05_StraightBeam.cs` |
 | [Clean angled ends on a transient beam](https://basautomationservices.com/blog/transient-beam-angled-ends/) | `Post06_AngledEnds.cs` |
 | [Rendering a transient beam in the viewport](https://basautomationservices.com/blog/transient-beam-rendering/) | `Post07_Rendering.cs` |
+| [Updating transient graphics without a full rebuild](https://basautomationservices.com/blog/transient-graphics-real-time-updates/) | `Post08_PreviewGraphics.cs` |
 
 Two projects:
 
