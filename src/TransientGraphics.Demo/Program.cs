@@ -80,7 +80,7 @@ public static class Program
         switch (post)
         {
             case "1":
-                throw new ArgumentException("Post 1 is the introduction and has no code to run; try 2 to 8.");
+                throw new ArgumentException("Post 1 is the introduction and has no code to run; try 2 to 9.");
             case "2":
                 graphics.AddBody(Post02_ConstructionTree.BuildSheet(app));
                 break;
@@ -150,8 +150,17 @@ public static class Program
                 preview.EndUpdate();
                 break;
             }
+            case "9":
+            {
+                var z = Vector3D.ZAxis;
+                graphics.AddBody(Post09_CurvedBeam.Build(app, rhs, [rhsInner],
+                    new Arc3D(new Point3D(0, 0, 0), z, Vector3D.XAxis, 40, 0, Math.PI / 2, isCounterClockwise: true)));
+                graphics.AddBody(Post09_CurvedBeam.Build(app, ipe, [],
+                    new Arc3D(new Point3D(0, 0, 0), z, Vector3D.XAxis, 70, 0, Math.PI / 2, isCounterClockwise: true)));
+                break;
+            }
             default:
-                throw new ArgumentException($"Unknown post '{post}'. Use 2-8, or clear.");
+                throw new ArgumentException($"Unknown post '{post}'. Use 2-9, or clear.");
         }
     }
 
